@@ -1,0 +1,11 @@
+Directives:
+ng-app <=> attaches the Application Module to the page
+ng-controller <=> attaches given controller to the page
+ng-show/ng-hide <=> show/hide element based on expression given
+ng-repeat <=> foreach
+ng-src = used for specifying source paths (i.e. img)
+
+TOREAD
+filters, e.g. {{  value | filter }}
+currency, date, limitTo, orderBy...
+

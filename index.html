@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="dogpedia">
+    <head>
+        <title>DogPedia, alpha version</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width = device-width, initial-scale = 1" />
+        <!-- Import Bootstrap CSS file using CDN -->
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    </head>
+    <body ng-controller="DogpediaController as dogpedia">
+        <div class="container">
+            <div class="jumbotron" ng-repeat="breed in dogpedia.breeds">
+                <section ng-controller="PanelController as panelc">
+                    <ul class="nav nav-pills">
+                        <li ng-class="{ active: panelc.isSelected(1) }"> <a href ng-click="panelc.selectTab(1)">Name</a> </li>
+                        <li ng-class="{ active: panelc.isSelected(2) }"> <a href ng-click="panelc.selectTab(2)">Description</a> </li>
+                    </ul>
+                    <div ng-show="panelc.isSelected(1)">
+                        <h4>Description</h4>
+                        <p>{{breed.description}}</p>
+                    </div>
+                    <div ng-show="panelc.isSelected(2)">
+                        <h4>Name</h4>
+                        <p>{{breed.name}}</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+    </body>
+</html>
